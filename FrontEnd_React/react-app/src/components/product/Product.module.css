@@ -1,0 +1,131 @@
+/* ===== Elegant Product Styles ===== */
+.Product {
+  /*very yallow color*/
+  --Product-bg: hsl(0, 0%, 100%);  /* Yellow-100 */
+  --Product-text: #333333;
+  --Product-accent: #4f46e5;  /* Indigo-600 */
+  --Product-radius: 12px;
+  --Product-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --Product-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  width: 265px;
+  height: 370px;
+  padding: 1rem;
+  background: var(--Product-bg);
+  border-radius: var(--Product-radius);
+  box-shadow: var(--Product-shadow);
+  transition: var(--Product-transition);
+  text-align: center;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  margin: 1rem;
+  display:inline-block;
+}
+
+.Product:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.ProductImage {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 1.25rem;
+  display: block;
+  border: 2px solid var(--Product-accent);
+  transition: var(--Product-transition);
+}
+
+.Product:hover .ProductImage {
+  transform: scale(1);
+  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.3);
+}
+
+.ProductTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--Product-text);
+  margin: 0 0 0.75rem 0;
+  letter-spacing: -0.025em;
+}
+
+.ProductContent {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #666;
+  margin: 0;
+  white-space: nowrap;       /* prevent wrapping */
+  overflow: hidden;          /* hide overflow */
+  text-overflow: ellipsis;  
+}
+
+/* Optional: Add a decorative line under title */
+.ProductTitle::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--Product-accent);
+  margin: 0.75rem auto;
+  border-radius: 3px;
+}
+
+
+
+
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .Product {
+    --Product-bg: #1e293b;
+    --Product-text: #f8fafc;
+  }
+  .ProductContent {
+    color: #94a3b8;
+  }
+}
+
+/* Pagination.css */
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.paginationButton {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  min-width: 80px;
+}
+
+.paginationButton:disabled {
+  background-color: #e0e0e0;
+  color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+.paginationButton:not(:disabled) {
+  background-color: #4285f4;
+}
+
+.paginationButton:not(:disabled):hover {
+  background-color: #3367d6;
+}
+
+.paginationInfo {
+  padding: 0.5rem 1rem;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* Error.module.css */
